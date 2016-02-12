@@ -1,1 +1,1 @@
-include ':test', ':providedandroid'
+include ':test'

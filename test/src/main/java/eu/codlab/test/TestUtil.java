@@ -106,12 +106,14 @@ public final class TestUtil {
 
     }
 
-    public static void purgeShadowActivityStartActivity(ShadowActivity shadowActivity) {
+    public static void purgeShadowActivityStartActivity(ShadowActivity shadowActivity) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         int maximum_stack_size = 200;
+        Method method = shadowActivity.getClass().getMethod("getNextStartedActivity");
+
         do {
             maximum_stack_size--;
             //we purge the intent stack
-        } while (shadowActivity.getNextStartedActivity() != null && maximum_stack_size > 0);
+        } while (method.invoke(shadowActivity) != null && maximum_stack_size > 0);
 
     }
 }
