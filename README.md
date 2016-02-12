@@ -64,3 +64,11 @@ Will assert that the class is a singleton
 
 Sometimes, you need to check for startActivity() results but you can have multiple previous call done earlier.
 This method makes sure the stack is cleared out when it returns. Use it before any test method where you require a startActivity to be tested
+
+# Roadmap
+
+- Add startActivityForResult
+- Add purgeShadowActivityStartActivity for simple Activity (ShadowActivity inside)
+- Improve singleton logic with accessor normalization
+- Improve doc
+- Improve readability
